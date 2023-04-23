@@ -148,37 +148,37 @@ SERVICE_ID = "service_kpzvjx8";
 PUBLIC_KEY = "o27GH_pTFYPacIXp-";
 
 
-// emailjs.init(publicKey);
+emailjs.init(PUBLIC_KEY);
 
-// const mainForm = document.querySelector(".contact__form");
+const mainForm = document.querySelector(".contact__form");
 
-// mainForm.addEventListener("submit", (e) => {
-//   e.preventDefault();
+mainForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-//   // Get the form data
-//   let name = mainForm.elements["name"].value;
-//   let email = mainForm.elements["email"].value;
-//   let message = mainForm.elements["message"].value;
-//   let phone = mainForm.elements["phone"].value;
-//   let project = mainForm.elements["project"].value;
+  // Get the form data
+  let name = mainForm.elements["name"].value;
+  let email = mainForm.elements["email"].value;
+  let message = mainForm.elements["message"].value;
+  let phone = mainForm.elements["phone"].value;
+  let project = mainForm.elements["project"].value;
 
-//   // Send the email
-//   emailjs
-//     .send(serviceId, templateId, {
-//       to_name: "Amirbek",
-//       from_name: name,
-//       from_email: email,
-//       phone_number: phone,
-//       project_name: project,
-//       message_html: message,
-//     })
-//     .then(
-//       function () {
-//         alert("Message sent successfully!");
-//       },
-//       function (error) {
-//         alert("Failed to send message!");
-//       }
-//     );
-//   mainForm.reset();
-// });
+  // Send the email
+  emailjs
+    .send(SERVICE_ID, TEMPLATE_ID, {
+      to_name: "Amirbek",
+      from_name: name,
+      from_email: email,
+      phone_number: phone,
+      project_name: project,
+      message_html: message,
+    })
+    .then(
+      function () {
+        alert("Message sent successfully!");
+      },
+      function (error) {
+        alert("Failed to send message!");
+      }
+    );
+  mainForm.reset();
+});
