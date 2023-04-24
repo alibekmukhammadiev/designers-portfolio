@@ -554,21 +554,70 @@ img{
     padding: 2rem 1rem;
     text-align: center;
     box-shadow: 0 4px 8px rgba(47,10,13,.25);
+
+    grid-gap: 1.5rem;
 }
 
-.testimonial__img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    justify-self: center;
-    margin-bottom: var(--mb-1);
+.testimonial__otziv {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 4rem;
 }
 
-.testimonial__client{
-    font-size: var(--small-font-size);
-    color: var(--first-color-light);
-    margin-bottom: var(--mb-2);
+.testimonial__form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: max-content 1fr max-content max-content;
+
+    grid-template-areas: 
+    "name"
+    "message"
+    "rate"
+    "submit";
 }
+
+.testimonial__form div {
+    grid-area: rate;
+}
+
+.testimonial__form div input[type="number"]::-webkit-inner-spin-button,
+.testimonial__form div input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+#name {
+    grid-area: name;
+}
+
+#message {
+    grid-area: message;
+    text-align: start;
+}
+
+#submit {
+    grid-area: submit;
+    justify-self: flex-start;
+}
+
+.testimonial__button {
+    display: inline-block;
+    background-color: var(--first-color);
+    color: var(--first-color-lighten);
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    transition: .3s;
+
+    outline: none;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+
+.testimonial__star {
+    color:  gold;
+}
+
 
 .swiper-pagination{
     position: initial;

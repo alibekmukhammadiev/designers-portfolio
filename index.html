@@ -351,51 +351,59 @@
       </section>
 
       <!-- ======== TESTIMONIALS ======== -->
-      <section class="testimonial section bd-container">
+      <section id="tes" class="testimonial section bd-container">
         <h2 class="section-title">Отзывы клиентов</h2>
 
         <div class="testimonial__container swiper">
           <div class="swiper-wrapper">
-            <div class="testimonial__content swiper-slide">
-              <img
-                src="assets/img/client2.jpg"
-                alt=""
-                class="testimonial__img"
-              />
+            <!-- <div class="testimonial__content swiper-slide">
               <h3 class="testimonial__title">Nikita Holly</h3>
               <p class="testimonial__description">
                 Эта компания делает очень хороший сервис, предлагает лучшие
                 предложения и хорошо работает, рекомендую.
               </p>
-            </div>
-
-            <div class="testimonial__content swiper-slide">
-              <img
-                src="assets/img/client1.jpg"
-                alt=""
-                class="testimonial__img"
-              />
-              <h3 class="testimonial__title">Sara Mill</h3>
-              <p class="testimonial__description">
-                Эта компания делает очень хороший сервис, предлагает лучшие
-                предложения и хорошо работает, рекомендую.
-              </p>
-            </div>
-
-            <div class="testimonial__content swiper-slide">
-              <img
-                src="assets/img/client.jpg"
-                alt=""
-                class="testimonial__img"
-              />
-              <h3 class="testimonial__title">Clay Mitchell</h3>
-              <p class="testimonial__description">
-                Эта компания делает очень хороший сервис, предлагает лучшие
-                предложения и хорошо работает, рекомендую.
-              </p>
-            </div>
+              <p class="testimonial__star">4/10</p>
+            </div> -->
           </div>
           <div class="swiper-pagination"></div>
+        </div>
+        <div class="testimonial__otziv">
+          <form action="" class="testimonial__form">
+            <input
+              id="name"
+              type="text"
+              placeholder="Имя"
+              name="name"
+              class="contact__input"
+            />
+            <textarea
+              name="message"
+              id=""
+              cols="0"
+              rows="5"
+              maxlength="160"
+              placeholder="Сообщение"
+              class="contact__input"
+            ></textarea>
+            <div>
+              <label for="rating">Оцените наш сервис по шкале от 1 до 10</label>
+              <input
+                class="contact__input"
+                type="number"
+                placeholder="0"
+                id="rating"
+                name="rating"
+                min="0"
+                max="10"
+              />
+            </div>
+            <input
+              id="submit"
+              type="submit"
+              value="Добавить комментарий"
+              class="testimonial__button"
+            />
+          </form>
         </div>
       </section>
 
@@ -420,18 +428,13 @@
             <div class="contact__box">
               <i class="bx bx-envelope contact__icon"></i>
               <h3 class="contact__title">Электронная почта</h3>
-              <span class="contact__description">amir4129@edu.vvsu.tu</span>
+              <span class="contact__description">amir4129@edu.vvsu.ru</span>
             </div>
 
             <div class="contact__box">
               <i class="bx bx-chat contact__icon"></i>
               <h3 class="contact__title">Chat</h3>
               <div>
-                <a
-                  href="https://wa.me/qr/KPAM2ZV2ILAHC1"
-                  class="contact__social"
-                  ><i class="bx bxl-whatsapp-square"></i
-                ></a>
                 <a href="https://t.me/emrissss" class="contact__social"
                   ><i class="bx bxl-telegram"></i
                 ></a>

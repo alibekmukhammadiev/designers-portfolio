@@ -147,7 +147,6 @@ TEMPLATE_ID = "template_vnk0jbb";
 SERVICE_ID = "service_kpzvjx8";
 PUBLIC_KEY = "o27GH_pTFYPacIXp-";
 
-
 emailjs.init(PUBLIC_KEY);
 
 const mainForm = document.querySelector(".contact__form");
@@ -156,11 +155,11 @@ mainForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Get the form data
-  let name = mainForm.elements["name"].value;
-  let email = mainForm.elements["email"].value;
-  let message = mainForm.elements["message"].value;
-  let phone = mainForm.elements["phone"].value;
-  let project = mainForm.elements["project"].value;
+  const name = mainForm.elements["name"].value;
+  const email = mainForm.elements["email"].value;
+  const message = mainForm.elements["message"].value;
+  const phone = mainForm.elements["phone"].value;
+  const project = mainForm.elements["project"].value;
 
   // Send the email
   emailjs
@@ -182,3 +181,67 @@ mainForm.addEventListener("submit", (e) => {
     );
   mainForm.reset();
 });
+
+// Comments with Firebase RealTime Database
+
+// Post
+const commentsForm = document.querySelector(".testimonial__form");
+const testimonialSection = document.querySelector(".testimonial")
+
+commentsForm.addEventListener("submit", (e) => {
+  e.preventDefault()
+
+  const name = commentsForm.elements["name"].value;
+  const message = commentsForm.elements["message"].value;
+  const rating = commentsForm.elements["rating"].value;
+
+  const urlPost = "https://comments-b3dce-default-rtdb.firebaseio.com/.json";
+
+  const data = {
+    name: name,
+    text: message,
+    rating: rating,
+  };
+
+  fetch(urlPost, {
+    method: "POST",
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+
+  commentsForm.reset();
+  location.reload();
+  // back to testimonial section
+  setTimeout(() => {
+    testimonialSection.scrollIntoView({ behavior: 'smooth' });
+  }, 500);
+});
+
+// Fetch
+function fetchData() {
+  const urlFetch = "https://comments-b3dce-default-rtdb.firebaseio.com/.json";
+  const parentSwiper = document.querySelectorAll(".swiper-wrapper")[0];
+
+  fetch(urlFetch)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      for (const [key, value] of Object.entries(data)) {
+        const comments = `
+      <div class="testimonial__content swiper-slide">
+      <h3 class="testimonial__title">${value.name}</h3>
+      <p class="testimonial__description">
+        ${value.text}
+      </p>
+      <p class="testimonial__star">${value.rating}/10</p>
+      </div>`;
+
+        parentSwiper.innerHTML += comments;
+      }
+    })
+    .catch((error) => console.error(error));
+}
+
+fetchData()
