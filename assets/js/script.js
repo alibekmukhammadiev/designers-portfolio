@@ -209,15 +209,14 @@ let sectionTitle = {
   easing: "ease-in-out",
 };
 let aboutDesc = {
-  distance: "60%",
-  origin: "left",
   opacity: 0.4,
   reset: true,
   duration: 850,
   delay: 100,
   easing: "ease-in-out",
+  scale: 1.5
 };
-let aboutNum = {
+let aboutNum1 = {
   distance: "60%",
   origin: "left",
   opacity: null,
@@ -226,9 +225,19 @@ let aboutNum = {
   delay: 150,
   easing: "ease-in-out",
 };
+let aboutNum2 = {
+  distance: "60%",
+  origin: "right",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 150,
+  easing: "ease-in-out",
+};
 ScrollReveal().reveal(".section-title", sectionTitle);
 ScrollReveal().reveal(".about__description", aboutDesc);
-ScrollReveal().reveal(".about__num", aboutNum);
+ScrollReveal().reveal(".about__num_1", aboutNum1);
+ScrollReveal().reveal(".about__num_2", aboutNum2);
 
 // scrollreveal js in qualification section
 let firstQual = {
