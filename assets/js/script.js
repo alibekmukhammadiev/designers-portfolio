@@ -153,10 +153,30 @@ mainForm.addEventListener("submit", (e) => {
     })
     .then(
       function () {
-        alert("Message sent successfully!");
+        let notyf = new Notyf({
+          duration: 3500,
+          position: {
+            x: "center",
+            y: "top",
+          },
+        });
+        notyf.success({
+          message: "Сообщение успешно отправлено!",
+          dismissible: true,
+        });
       },
       function (error) {
-        alert("Failed to send message!");
+        let notyf = new Notyf({
+          duration: 3500,
+          position: {
+            x: "center",
+            y: "top",
+          },
+        });
+        notyf.error({
+          message: "Не удалось отправить сообщение!",
+          dismissible: true,
+        });
       }
     );
   mainForm.reset();
@@ -174,6 +194,7 @@ let slideUp1 = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 let slideUp2 = {
   distance: "20%",
@@ -183,6 +204,7 @@ let slideUp2 = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 let slideUp3 = {
   distance: "50%",
@@ -192,6 +214,7 @@ let slideUp3 = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 ScrollReveal().reveal(".services__data_1", slideUp1);
 ScrollReveal().reveal(".services__data_2", slideUp2);
@@ -207,6 +230,7 @@ let sectionTitle = {
   duration: 850,
   delay: 100,
   easing: "ease-in-out",
+  mobile: false,
 };
 let aboutDesc = {
   opacity: 0.4,
@@ -214,7 +238,8 @@ let aboutDesc = {
   duration: 850,
   delay: 100,
   easing: "ease-in-out",
-  scale: 1.5
+  mobile: false,
+  scale: 1.25,
 };
 let aboutNum1 = {
   distance: "60%",
@@ -224,6 +249,7 @@ let aboutNum1 = {
   duration: 850,
   delay: 150,
   easing: "ease-in-out",
+  mobile: false,
 };
 let aboutNum2 = {
   distance: "60%",
@@ -233,6 +259,7 @@ let aboutNum2 = {
   duration: 850,
   delay: 150,
   easing: "ease-in-out",
+  mobile: false,
 };
 ScrollReveal().reveal(".section-title", sectionTitle);
 ScrollReveal().reveal(".about__description", aboutDesc);
@@ -248,6 +275,7 @@ let firstQual = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 let secondQual = {
   distance: "50%",
@@ -257,6 +285,7 @@ let secondQual = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 ScrollReveal().reveal(".qualification__content_1", firstQual);
 ScrollReveal().reveal(".qualification__content_2", secondQual);
@@ -270,6 +299,7 @@ let contactBox1 = {
   duration: 850,
   delay: 150,
   easing: "ease-in-out",
+  mobile: false,
 };
 let contactBox2 = {
   distance: "55%",
@@ -279,6 +309,7 @@ let contactBox2 = {
   duration: 850,
   delay: 250,
   easing: "ease-in-out",
+  mobile: false,
 };
 let contactBox3 = {
   distance: "60%",
@@ -288,6 +319,7 @@ let contactBox3 = {
   duration: 850,
   delay: 300,
   easing: "ease-in-out",
+  mobile: false,
 };
 let contactBox4 = {
   distance: "65%",
@@ -297,6 +329,7 @@ let contactBox4 = {
   duration: 850,
   delay: 350,
   easing: "ease-in-out",
+  mobile: false,
 };
 ScrollReveal().reveal(".contact__box_1", contactBox1);
 ScrollReveal().reveal(".contact__box_2", contactBox2);
@@ -312,6 +345,7 @@ let contactInput1 = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 let contactInput2 = {
   distance: "60%",
@@ -321,6 +355,7 @@ let contactInput2 = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 let contactInput3 = {
   distance: "60%",
@@ -330,6 +365,7 @@ let contactInput3 = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 let contactInput4 = {
   distance: "60%",
@@ -339,6 +375,7 @@ let contactInput4 = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 let contactInput5 = {
   distance: "35%",
@@ -348,6 +385,7 @@ let contactInput5 = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 let contactBtn = {
   distance: "60%",
@@ -357,6 +395,7 @@ let contactBtn = {
   duration: 850,
   delay: 200,
   easing: "ease-in-out",
+  mobile: false,
 };
 ScrollReveal().reveal(".contact__input_1", contactInput1);
 ScrollReveal().reveal(".contact__input_2", contactInput2);
@@ -368,7 +407,7 @@ ScrollReveal().reveal(".contact__button", contactBtn);
 // scrollreveal js in portfolio section
 let allPortfolioContent = document.querySelectorAll(".portfolio__content");
 let portfolioContent = {
-  distance: "50%",
+  distance: "35%",
   origin: "bottom",
   opacity: null,
   reset: true,
@@ -380,3 +419,44 @@ allPortfolioContent.forEach((e) => {
   portfolioContent.delay += 50;
   ScrollReveal().reveal(e, portfolioContent);
 });
+
+// typewriter js animation for home h1
+let homeTitle = document.querySelector(".home__name");
+let nickName = null;
+const mobile = window.matchMedia("(max-width: 768px)");
+console.log(mobile);
+if (mobile.matches) {
+  nickName = "@MIRR DESIGNER";
+} else {
+  nickName = "@MIRRDESIGNER";
+}
+
+let homeTypewriter = new Typewriter(homeTitle, {
+  loop: true,
+});
+
+homeTypewriter
+  .pauseFor(2000)
+  .typeString("Тоиров Амир")
+  .pauseFor(2000)
+  .deleteAll()
+  .typeString(nickName)
+  .pauseFor(1500)
+  .deleteAll()
+  .start();
+
+// typewriter js animation for footer h1
+let footerTitle = document.querySelector(".footer__title");
+let footerTypewriter = new Typewriter(footerTitle, {
+  loop: true,
+});
+
+footerTypewriter
+  .pauseFor(500)
+  .typeString("Тоиров Амир")
+  .pauseFor(2000)
+  .deleteAll()
+  .typeString("@mirrdesigner")
+  .pauseFor(1500)
+  .deleteAll()
+  .start();

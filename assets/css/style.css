@@ -1,7 +1,7 @@
 /* GOOGLE FONT */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
 @import url("https://fonts.cdnfonts.com/css/berold");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
 :root {
   --header-height: 3rem;
 
@@ -13,7 +13,7 @@
   --first-color-lighten: #fbf9f9;
 
   /*== Font & Typo ==*/
-  --body-font: "Poppins", sans-serif;
+  --body-font: "Manrope", sans-serif;
   --biggest-font-size: 2.5rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -72,6 +72,8 @@ body {
   background-color: var(--first-color-lighten);
   color: var(--text-color);
   line-height: 1.6;
+
+  overflow-x: hidden;
 }
 
 h1,
@@ -100,6 +102,10 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+swiper-container {
+  height: 65%;
+  align-self: center;
 }
 
 swiper-slide img {
@@ -309,7 +315,7 @@ swiper-slide img {
 .home__name {
   font-family: "Berold", sans-serif;
   text-transform: lowercase;
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   font-weight: 100;
 }
 
@@ -328,12 +334,12 @@ swiper-slide img {
 }
 
 .home__greeting {
-  font-size: 0.813rem;
+  font-size: 1rem;
   font-weight: 100;
 }
 
 .home__profession {
-  font-size: 0.938rem;
+  font-size: 1rem;
   margin-bottom: var(--mb-3);
   font-weight: 100;
 }
@@ -419,7 +425,6 @@ swiper-slide img {
 }
 .about__num {
   text-align: center;
-
 }
 /* ========================================================================= */
 
@@ -472,12 +477,21 @@ swiper-slide img {
 
 /* ==== SERVICES ==== */
 .services__data {
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 5rem 1rem;
   background-color: #fff;
   border-radius: 0.5rem;
   text-align: center;
   transition: 0.4s;
   box-shadow: 0 4px 6px rgba(174, 190, 205, 0.3);
+
+  position: relative;
+}
+
+.services__btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .services__icon,
@@ -767,10 +781,12 @@ swiper-slide img {
 }
 
 .footer__title {
+  font-family:  "Berold", sans-serif;
   font-size: 2.4rem;
   margin-bottom: var(--mb-1);
   font-weight: var(--font-semi-bold);
   font-weight: 100;
+  text-transform: lowercase;
 }
 
 .footer__description {
@@ -941,4 +957,8 @@ swiper-slide img {
     width: 70%;
     margin-left: 9.75rem;
   }
+}
+
+.qualification {
+  padding-top: 0;
 }
