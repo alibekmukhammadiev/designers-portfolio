@@ -186,10 +186,10 @@ mainForm.addEventListener("submit", (e) => {
 
 // Post
 const commentsForm = document.querySelector(".testimonial__form");
-const testimonialSection = document.querySelector(".testimonial")
+const testimonialSection = document.querySelector(".testimonial");
 
 commentsForm.addEventListener("submit", (e) => {
-  e.preventDefault()
+  e.preventDefault();
 
   const name = commentsForm.elements["name"].value;
   const message = commentsForm.elements["message"].value;
@@ -215,7 +215,7 @@ commentsForm.addEventListener("submit", (e) => {
   location.reload();
   // back to testimonial section
   setTimeout(() => {
-    testimonialSection.scrollIntoView({ behavior: 'smooth' });
+    testimonialSection.scrollIntoView({ behavior: "smooth" });
   }, 500);
 });
 
@@ -244,4 +244,39 @@ function fetchData() {
     .catch((error) => console.error(error));
 }
 
-fetchData()
+fetchData();
+
+// particles js animation
+particlesJS.load("particles-js", "particles.json", function () {});
+
+// scrollreveal js animation
+let slideUp1 = {
+  distance: "50%",
+  origin: "left",
+  opacity: null,
+  reset: true,
+  duration: 500,
+  delay: 200,
+  easing: "ease-in-out",
+};
+let slideUp2 = {
+  distance: "20%",
+  origin: "bottom",
+  opacity: null,
+  reset: true,
+  duration: 500,
+  delay: 200,
+  easing: "ease-in-out",
+};
+let slideUp3 = {
+  distance: "50%",
+  origin: "right",
+  opacity: null,
+  reset: true,
+  duration: 500,
+  delay: 200,
+  easing: "ease-in-out",
+};
+ScrollReveal().reveal(".services__data_1", slideUp1);
+ScrollReveal().reveal(".services__data_2", slideUp2);
+ScrollReveal().reveal(".services__data_3", slideUp3);

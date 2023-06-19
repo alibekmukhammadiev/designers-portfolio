@@ -17,6 +17,9 @@
     <!--- CSS --->
     <link rel="stylesheet" href="assets/css/style.css" />
 
+    <!-- SCROLLREVEAL JS -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <!-- Email js -->
     <script
       type="text/javascript"
@@ -103,16 +106,17 @@
               <span>Всех приветствую <br /> </span>на своём странице, рад вас
               видеть. Я живу во Владивостоке но имею проекты и в других городах.
               С самого юного возраста у меня был интерес строить красивые дома,
-              украшать свою комнату, и. т. д. Родился я в Узбекистане в городе
-              Бухара, в семье как говорится, бизнесменов. Мои родители чтобы
-              продолжить свой бизнес поехали во Владивосток и через много лет
-              позвали меня учиться. Я приехал к ним и поступил на факультет
-              «дизайн среды». Как вы уже заметили, я дизайнер интерьера с не
-              большим опытом.
+              украшать свою комнату, и. т. д. Родился я в
+              <strong>Узбекистане</strong> в городе <strong>Бухара</strong>, в
+              семье как говорится, бизнесменов. Мои родители чтобы продолжить
+              свой бизнес поехали во <strong>Владивосток</strong> и через много
+              лет позвали меня учиться. Я приехал к ним и поступил на факультет
+              <strong>«дизайн среды»</strong>. Как вы уже заметили, я дизайнер
+              интерьера с не большим опытом.
             </p>
 
             <div>
-              <span class="about__number">3</span>
+              <span class="about__number">3+</span>
               <span class="about__achievement">Многолетний опыт</span>
             </div>
 
@@ -122,7 +126,48 @@
             </div>
           </div>
 
-          <img src="assets/img/intro.jpg" alt="" class="about__img" />
+          <!-- <img src="assets/img/main.jpg" alt="" class="about__img" /> -->
+          <swiper-container
+            class="mySwiper"
+            pagination="true"
+            effect="coverflow"
+            grab-cursor="true"
+            centered-slides="true"
+            slides-per-view="auto"
+            coverflow-effect-rotate="50"
+            coverflow-effect-stretch="0"
+            coverflow-effect-depth="100"
+            coverflow-effect-modifier="1"
+            coverflow-effect-slide-shadows="true"
+          >
+            <swiper-slide>
+              <img src="./assets/img/amir.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/img/amir1.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/img/amir2.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/img/amir3.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/img/amir4.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/img/amir5.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/img/amir6.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/img/main.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="./assets/img/amir.jpg" />
+            </swiper-slide>
+          </swiper-container>
         </div>
       </section>
 
@@ -190,7 +235,7 @@
         <h2 class="section-title">Услуги</h2>
 
         <div class="services__container bd-grid">
-          <div class="services__data">
+          <div class="services__data services__data_1">
             <i class="bx bx-palette services__icon"></i>
             <h3 class="services__title">Дизайн интерьера и экстерьер</h3>
             <p class="services__description">
@@ -200,7 +245,7 @@
             <a href="#" class="button">Узнать больше</a>
           </div>
 
-          <div class="services__data">
+          <div class="services__data services__data_2">
             <i class="bx bx-laptop services__icon"></i>
             <h3 class="services__title">Ландшафт</h3>
             <p class="services__description">
@@ -209,7 +254,7 @@
             <a href="#" class="button">Узнать больше</a>
           </div>
 
-          <div class="services__data">
+          <div class="services__data services__data_3">
             <i class="bx bx-pen services__icon"></i>
             <h3 class="services__title">Графический дизайн</h3>
             <p class="services__description">
@@ -351,7 +396,7 @@
       </section>
 
       <!-- ======== TESTIMONIALS ======== -->
-      <section id="tes" class="testimonial section bd-container">
+      <section class="testimonial section bd-container">
         <h2 class="section-title">Отзывы клиентов</h2>
 
         <div class="testimonial__container swiper">
@@ -433,7 +478,7 @@
 
             <div class="contact__box">
               <i class="bx bx-chat contact__icon"></i>
-              <h3 class="contact__title">Chat</h3>
+              <h3 class="contact__title">Чат</h3>
               <div>
                 <a href="https://t.me/emrissss" class="contact__social"
                   ><i class="bx bxl-telegram"></i
@@ -497,6 +542,8 @@
 
       <!-- ==== FOOTER ==== -->
       <footer class="footer">
+        <!-- particles.js container -->
+        <div id="particles-js"></div>
         <div class="footer__container bd-container">
           <h1 class="footer__title">Тоиров Амир</h1>
           <p class="footer__description">
@@ -527,9 +574,13 @@
 
     <!--- SWIPER JS --->
     <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 
     <!--- GSAP --->
     <script src="assets/js/gsap.min.js"></script>
+
+    <!-- PARTICLES JS -->
+    <script src="./assets/js/particles.js"></script>
 
     <!--- SCRIPT.JS --->
     <script src="assets/js/script.js"></script>
