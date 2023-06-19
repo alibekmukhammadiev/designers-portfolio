@@ -102,6 +102,11 @@ img {
   display: block;
 }
 
+swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
 /*== class css ==*/
 .section {
   padding: 4rem 0 2rem;
@@ -398,7 +403,7 @@ img {
 /* == ABOUT == */
 
 .about__data {
-  text-align: center;
+  text-align: justify;
 }
 
 .about__description span {
@@ -412,7 +417,10 @@ img {
   color: var(--first-color);
   display: block;
 }
+.about__num {
+  text-align: center;
 
+}
 /* ========================================================================= */
 
 .about__img {
@@ -874,7 +882,7 @@ img {
     width: 440px;
   }
   .about__description {
-    text-align: initial;
+    text-align: justify
   }
   .about__img {
     width: 330px;

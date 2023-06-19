@@ -85,26 +85,6 @@ function activePortfolio() {
 }
 linkPortfolio.forEach((l) => l.addEventListener("click", activePortfolio));
 
-// SWIPER CAROUSEL
-const swiper = new Swiper(".testimonial__container", {
-  spaceBetween: 16,
-  loop: true,
-  grabCursor: true,
-
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-});
-
 //   GSAP ANIMATION
 gsap.from(".home__img", { opacity: 0, duration: 2, delay: 0.5, x: 60 });
 gsap.from(".home__data", { opacity: 0, duration: 2, delay: 0.8, y: 25 });
@@ -182,80 +162,16 @@ mainForm.addEventListener("submit", (e) => {
   mainForm.reset();
 });
 
-// Comments with Firebase RealTime Database
-
-// Post
-const commentsForm = document.querySelector(".testimonial__form");
-const testimonialSection = document.querySelector(".testimonial");
-
-commentsForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const name = commentsForm.elements["name"].value;
-  const message = commentsForm.elements["message"].value;
-  const rating = commentsForm.elements["rating"].value;
-
-  const urlPost = "https://comments-b3dce-default-rtdb.firebaseio.com/.json";
-
-  const data = {
-    name: name,
-    text: message,
-    rating: rating,
-  };
-
-  fetch(urlPost, {
-    method: "POST",
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
-
-  commentsForm.reset();
-  location.reload();
-  // back to testimonial section
-  setTimeout(() => {
-    testimonialSection.scrollIntoView({ behavior: "smooth" });
-  }, 500);
-});
-
-// Fetch
-function fetchData() {
-  const urlFetch = "https://comments-b3dce-default-rtdb.firebaseio.com/.json";
-  const parentSwiper = document.querySelectorAll(".swiper-wrapper")[0];
-
-  fetch(urlFetch)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      for (const [key, value] of Object.entries(data)) {
-        const comments = `
-      <div class="testimonial__content swiper-slide">
-      <h3 class="testimonial__title">${value.name}</h3>
-      <p class="testimonial__description">
-        ${value.text}
-      </p>
-      <p class="testimonial__star">${value.rating}/10</p>
-      </div>`;
-
-        parentSwiper.innerHTML += comments;
-      }
-    })
-    .catch((error) => console.error(error));
-}
-
-fetchData();
-
 // particles js animation
 particlesJS.load("particles-js", "particles.json", function () {});
 
-// scrollreveal js animation
+// scrollreveal js in services section
 let slideUp1 = {
   distance: "50%",
   origin: "left",
   opacity: null,
   reset: true,
-  duration: 500,
+  duration: 850,
   delay: 200,
   easing: "ease-in-out",
 };
@@ -264,7 +180,7 @@ let slideUp2 = {
   origin: "bottom",
   opacity: null,
   reset: true,
-  duration: 500,
+  duration: 850,
   delay: 200,
   easing: "ease-in-out",
 };
@@ -273,10 +189,185 @@ let slideUp3 = {
   origin: "right",
   opacity: null,
   reset: true,
-  duration: 500,
+  duration: 850,
   delay: 200,
   easing: "ease-in-out",
 };
 ScrollReveal().reveal(".services__data_1", slideUp1);
 ScrollReveal().reveal(".services__data_2", slideUp2);
 ScrollReveal().reveal(".services__data_3", slideUp3);
+
+// scrollreveal js in about section
+
+let sectionTitle = {
+  distance: "60%",
+  origin: "top",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 100,
+  easing: "ease-in-out",
+};
+let aboutDesc = {
+  distance: "60%",
+  origin: "left",
+  opacity: 0.4,
+  reset: true,
+  duration: 850,
+  delay: 100,
+  easing: "ease-in-out",
+};
+let aboutNum = {
+  distance: "60%",
+  origin: "left",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 150,
+  easing: "ease-in-out",
+};
+ScrollReveal().reveal(".section-title", sectionTitle);
+ScrollReveal().reveal(".about__description", aboutDesc);
+ScrollReveal().reveal(".about__num", aboutNum);
+
+// scrollreveal js in qualification section
+let firstQual = {
+  distance: "50%",
+  origin: "left",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 200,
+  easing: "ease-in-out",
+};
+let secondQual = {
+  distance: "50%",
+  origin: "right",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 200,
+  easing: "ease-in-out",
+};
+ScrollReveal().reveal(".qualification__content_1", firstQual);
+ScrollReveal().reveal(".qualification__content_2", secondQual);
+
+// scrollreveal js in qualification section
+let contactBox1 = {
+  distance: "50%",
+  origin: "right",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 150,
+  easing: "ease-in-out",
+};
+let contactBox2 = {
+  distance: "55%",
+  origin: "right",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 250,
+  easing: "ease-in-out",
+};
+let contactBox3 = {
+  distance: "60%",
+  origin: "right",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 300,
+  easing: "ease-in-out",
+};
+let contactBox4 = {
+  distance: "65%",
+  origin: "right",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 350,
+  easing: "ease-in-out",
+};
+ScrollReveal().reveal(".contact__box_1", contactBox1);
+ScrollReveal().reveal(".contact__box_2", contactBox2);
+ScrollReveal().reveal(".contact__box_3", contactBox3);
+ScrollReveal().reveal(".contact__box_4", contactBox4);
+
+// scrollreveal js in qualification section
+let contactInput1 = {
+  distance: "60%",
+  origin: "left",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 200,
+  easing: "ease-in-out",
+};
+let contactInput2 = {
+  distance: "60%",
+  origin: "right",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 200,
+  easing: "ease-in-out",
+};
+let contactInput3 = {
+  distance: "60%",
+  origin: "left",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 200,
+  easing: "ease-in-out",
+};
+let contactInput4 = {
+  distance: "60%",
+  origin: "right",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 200,
+  easing: "ease-in-out",
+};
+let contactInput5 = {
+  distance: "35%",
+  origin: "left",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 200,
+  easing: "ease-in-out",
+};
+let contactBtn = {
+  distance: "60%",
+  origin: "bottom",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 200,
+  easing: "ease-in-out",
+};
+ScrollReveal().reveal(".contact__input_1", contactInput1);
+ScrollReveal().reveal(".contact__input_2", contactInput2);
+ScrollReveal().reveal(".contact__input_3", contactInput3);
+ScrollReveal().reveal(".contact__input_4", contactInput4);
+ScrollReveal().reveal(".contact__input_5", contactInput5);
+ScrollReveal().reveal(".contact__button", contactBtn);
+
+// scrollreveal js in portfolio section
+let allPortfolioContent = document.querySelectorAll(".portfolio__content");
+let portfolioContent = {
+  distance: "50%",
+  origin: "bottom",
+  opacity: null,
+  reset: true,
+  duration: 850,
+  delay: 200,
+  easing: "ease-in-out",
+};
+allPortfolioContent.forEach((e) => {
+  portfolioContent.delay += 50;
+  ScrollReveal().reveal(e, portfolioContent);
+});
