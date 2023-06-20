@@ -1,3 +1,5 @@
+//////////////////////////////////
+
 // SHOW MENU
 
 const showMenu = (toggleId, navId) => {
@@ -85,6 +87,8 @@ function activePortfolio() {
 }
 linkPortfolio.forEach((l) => l.addEventListener("click", activePortfolio));
 
+/////////////////////////////////////
+
 //   GSAP ANIMATION
 gsap.from(".home__img", { opacity: 0, duration: 2, delay: 0.5, x: 60 });
 gsap.from(".home__data", { opacity: 0, duration: 2, delay: 0.8, y: 25 });
@@ -122,7 +126,9 @@ gsap.from(".home__social-icon", {
   stagger: 0.2,
 });
 
-// Form submit
+///////////////////////////////////////
+
+// FORM SUBMIT
 TEMPLATE_ID = "template_vnk0jbb";
 SERVICE_ID = "service_kpzvjx8";
 PUBLIC_KEY = "o27GH_pTFYPacIXp-";
@@ -182,8 +188,13 @@ mainForm.addEventListener("submit", (e) => {
   mainForm.reset();
 });
 
-// particles js animation
+//////////////////////////////////////////////
+
+// PARTICLES JS ANIMATION
 particlesJS.load("particles-js", "particles.json", function () {});
+particlesJS.load("mainparticles-js", "main-particles-config.json", function () {});
+
+//////////////////////////////////////////////
 
 // scrollreveal js in services section
 let slideUp1 = {
@@ -420,15 +431,17 @@ allPortfolioContent.forEach((e) => {
   ScrollReveal().reveal(e, portfolioContent);
 });
 
+//////////////////////////////////////////////
+
 // typewriter js animation for home h1
 let homeTitle = document.querySelector(".home__name");
 let nickName = null;
 const mobile = window.matchMedia("(max-width: 768px)");
-console.log(mobile);
+
 if (mobile.matches) {
-  nickName = "@MIRR DESIGNER";
+  nickName = "MIRR DESIGNER";
 } else {
-  nickName = "@MIRRDESIGNER";
+  nickName = "MIRRDESIGNER";
 }
 
 let homeTypewriter = new Typewriter(homeTitle, {
@@ -456,7 +469,9 @@ footerTypewriter
   .typeString("Тоиров Амир")
   .pauseFor(2000)
   .deleteAll()
-  .typeString("@mirrdesigner")
+  .typeString("mirrdesigner")
   .pauseFor(1500)
   .deleteAll()
   .start();
+
+//////////////////////////////////
