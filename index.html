@@ -39,7 +39,24 @@
     <title>Портфолио Амирбека Тоирова</title>
   </head>
   <body>
-    <!---- SCROLL TOP ---->
+    <!-- MODAL -->
+    <div class="modal">
+      <div class="modal__container bd-container">
+        <div class="modal__header">
+          <ul>
+            <li data-num="0" class="">Дизайн интерьера и экстерьер</li>
+            <li data-num="1" class="">Ландшафт</li>
+            <li data-num="2" class="">Графический дизайн</li>
+          </ul>
+
+          <img class="modal__exit" src="assets/img/exit.png" alt="exit" />
+        </div>
+        <div class="modal__body">
+          <h1 class="h1"></h1>
+        </div>
+      </div>
+    </div>
+    <!---- SCROLL TO TOP ---->
     <a href="#" class="scrolltop" id="scroll-top">
       <i class="bx bx-chevron-up scrolltop__icon"></i>
     </a>
@@ -109,15 +126,15 @@
           <div class="about__data bd-grid">
             <p class="about__description">
               <span>Всех приветствую <br /> </span>на своём странице, рад вас
-              видеть. Я живу во Владивостоке но имею проекты и в других городах.
-              С самого юного возраста у меня был интерес строить красивые дома,
-              украшать свою комнату, и. т. д. Родился я в
+              видеть. Я живу во <strong>Владивостоке</strong> но имею проекты и
+              в других городах. С самого юного возраста у меня был интерес
+              строить красивые дома, украшать свою комнату, и. т. д. Родился я в
               <strong>Узбекистане</strong> в городе <strong>Бухара</strong>, в
               семье как говорится, бизнесменов. Мои родители чтобы продолжить
               свой бизнес поехали во <strong>Владивосток</strong> и через много
               лет позвали меня учиться. Я приехал к ним и поступил на факультет
-              <strong>«дизайн среды»</strong>. Как вы уже заметили, я дизайнер
-              интерьера с не большим опытом.
+              <strong>«дизайн среды»</strong>. Как вы уже заметили, я
+              <strong>дизайнер интерьера</strong> с не большим опытом.
             </p>
 
             <div class="about__num about__num_1">
@@ -247,7 +264,7 @@
               Замер, 3 варианта планировчных решении, альбом чертёжей, 3D
               визуализация
             </p>
-            <a class="button services__btn services__btn_1">Узнать больше</a>
+            <a class="button services__btn services__btn_1" data-num="0">Узнать больше</a>
           </div>
 
           <div class="services__data services__data_2">
@@ -256,7 +273,9 @@
             <p class="services__description">
               Ландшафт садов, Ландшафт для экстерьера
             </p>
-            <a class="button services__btn services__btn_2">Узнать больше</a>
+            <a class="button services__btn services__btn_2" data-num="1"
+              >Узнать больше</a
+            >
           </div>
 
           <div class="services__data services__data_3">
@@ -265,7 +284,9 @@
             <p class="services__description">
               Логотип бренда, анимация, 3D graphic
             </p>
-            <a class="button services__btn services_btn_3">Узнать больше</a>
+            <a class="button services__btn services_btn_3" data-num="2"
+              >Узнать больше</a
+            >
           </div>
         </div>
       </section>
@@ -480,8 +501,8 @@
         <div class="footer__container bd-container">
           <h1 class="footer__title">Тоиров Амир</h1>
           <p class="footer__description">
-            Меня зовут Тоиров Амир, и это мой личный сайт, проконсультируйтесь
-            со мной здесь.
+            Меня зовут <strong>Тоиров Амир</strong>, и это мой личный сайт,
+            проконсультируйтесь со мной здесь.
           </p>
 
           <div class="footer__social">

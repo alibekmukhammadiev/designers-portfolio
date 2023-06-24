@@ -474,3 +474,54 @@ footerTypewriter
   .start();
 
 //////////////////////////////////
+
+// CUSTOMIZING MODAL
+const infoForModal = [
+  {
+    description: "Design",
+  },
+  {
+    description: "Land",
+  },
+  {
+    description: "Graphic",
+  },
+];
+const changeHandlerModal = function (num) {
+  const h1 = document.querySelector(".h1");
+  h1.textContent = infoForModal[num].description;
+};
+
+const navs = document.querySelectorAll(".modal__header ul li");
+navs.forEach((child) => {
+  child.addEventListener("click", (e) => {
+    navs.forEach((nav) => {
+      nav.classList.remove("active__li");
+    });
+    child.classList.add("active__li");
+
+    const num = Number(child.getAttribute("data-num"));
+    changeHandlerModal(num);
+  });
+});
+
+const exit = document.querySelector(".modal__exit");
+const modal = document.querySelector(".modal");
+exit.addEventListener("click", (e) => {
+  modal.style.display = "none";
+});
+
+const btns = document.querySelectorAll(".services__btn");
+btns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    modal.style.display = "block";
+
+    const num = Number(btn.getAttribute("data-num"));
+    navs.forEach((e) => {
+      e.classList.remove("active__li");
+    });
+    navs[num].classList.add("active__li");
+
+    changeHandlerModal(num);
+  });
+});
