@@ -517,11 +517,13 @@ const exit = document.querySelector(".modal__exit");
 const modal = document.querySelector(".modal");
 exit.addEventListener("click", (e) => {
   modal.style.display = "none";
+  document.body.style.overflowY = 'visible';
 });
 
 const btns = document.querySelectorAll(".services__btn");
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    document.body.style.overflowY = 'hidden';
     modal.style.display = "block";
 
     const num = Number(btn.getAttribute("data-num"));
