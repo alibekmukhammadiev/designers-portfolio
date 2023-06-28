@@ -517,13 +517,13 @@ const exit = document.querySelector(".modal__exit");
 const modal = document.querySelector(".modal");
 exit.addEventListener("click", (e) => {
   modal.style.display = "none";
-  document.body.style.overflowY = 'visible';
+  document.body.style.overflowY = "visible";
 });
 
 const btns = document.querySelectorAll(".services__btn");
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    document.body.style.overflowY = 'hidden';
+    document.body.style.overflowY = "hidden";
     modal.style.display = "block";
 
     const num = Number(btn.getAttribute("data-num"));
@@ -532,6 +532,39 @@ btns.forEach((btn) => {
     });
     navs[num].classList.add("active__li");
 
+    changeHandlerModal(num);
+  });
+});
+
+// DROPDOWN CONFIG
+const dropdownBtn = document.getElementById("btn");
+const dropdownMenu = document.getElementById("dropdown");
+const toggleArrow = document.getElementById("arrow");
+
+// Toggle dropdown function
+const toggleDropdown = function () {
+  dropdownMenu.classList.toggle("show");
+  toggleArrow.classList.toggle("arrow");
+};
+
+// Toggle dropdown open/close when dropdown button is clicked
+dropdownBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
+  toggleDropdown();
+});
+
+// Close dropdown when dom element is clicked
+document.documentElement.addEventListener("click", function () {
+  if (dropdownMenu.classList.contains("show")) {
+    toggleDropdown();
+  }
+});
+
+// Changing UI of modal
+const aEl = document.querySelectorAll(".dropdown a");
+aEl.forEach((child) => {
+  child.addEventListener("click", (e) => {
+    const num = Number(child.getAttribute("data-num"));
     changeHandlerModal(num);
   });
 });

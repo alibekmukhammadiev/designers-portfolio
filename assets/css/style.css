@@ -145,6 +145,67 @@ body {
   text-align: justify;
 }
 
+.modal__dropdownCont {
+  display: none;
+}
+
+.btn {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: var(--gap);
+  padding: 0.6rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  border: none;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.bx {
+  font-size: 1.1rem;
+}
+
+.dropdown {
+  position: absolute;
+  width: max-content;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  margin-top: 0.3rem;
+  background: white;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown a:hover {
+  background-color: var(--color);
+  color: white;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0rem);
+}
+
+.arrow {
+  transform: rotate(180deg);
+  transition: 0.2s ease;
+}
+
 @media screen and (max-width: 805px) {
   .modal__exit {
     width: 7rem;
@@ -179,16 +240,15 @@ body {
   .modal {
     font-size: 0.8;
   }
-  .modal__header ul {
-    padding: 1rem;
-    flex-direction: column;
+  .modal__header {
+    padding: 1rem 0rem;
   }
-  .modal__header ul li {
-    justify-content: center;
+  .modal__header ul {
+    display: none;
   }
 
-  .active__li {
-    border-radius: 1rem 0rem;
+  .modal__dropdownCont {
+    display: block;
   }
 }
 
