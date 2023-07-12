@@ -568,3 +568,48 @@ aEl.forEach((child) => {
     changeHandlerModal(num);
   });
 });
+
+// Swiper for Portfolio section
+const viewDetailsBtn = document.querySelectorAll(".view__details");
+const portfolioContainer = document.querySelector(".portfolio__container");
+const sliderExit = document.querySelector(".slider__exit_icon");
+const sliderContainer = document.querySelector(".slider__container");
+
+sliderExit.addEventListener("click", (e) => {
+  sliderContainer.style.display = "none";
+  document.body.style.overflowY = "visible";
+});
+
+viewDetailsBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    sliderContainer.style.display = "flex";
+    document.body.style.overflowY = "hidden";
+
+    const previousImages = document.querySelector(
+      ".slider__images .slider__image"
+    );
+
+    const whichBtn = Number(btn.getAttribute("data-which"));
+    const sliderRight = document.querySelector(".slider__arrow-right");
+    const sliderLeft = document.querySelector(".slider__arrow-left");
+    const QUEU = [11, 13, 11, 3, 3];
+    let currentQueu = QUEU[whichBtn];
+  
+
+    previousImages.src = `assets/img/project${whichBtn}/project${whichBtn}-1.jpg`;
+
+    sliderRight.addEventListener("click", (e) => {
+      if (currentQueu > 1) {
+        currentQueu--;
+        previousImages.src = `assets/img/project${whichBtn}/project${whichBtn}-${currentQueu}.jpg`;
+      }
+    });
+    sliderLeft.addEventListener("click", (e) => {
+      if (currentQueu < QUEU[whichBtn] - 1) {
+        currentQueu++;
+        previousImages.src = `assets/img/project${whichBtn}/project${whichBtn}-${currentQueu}.jpg`;
+      }
+    });
+  });
+});

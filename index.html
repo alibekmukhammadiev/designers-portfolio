@@ -322,110 +322,143 @@
       </section>
 
       <!-- ==== PORTFOLIO ==== -->
+      <div class="slider__container">
+        <div class="slider__exit bd-container">
+          <img class="slider__exit_icon" src="assets/img/exit.png" alt="exit" />
+        </div>
+        <div class="slider__images bd-container">
+          <img
+            class="slider__image"
+            src="assets/img/project0/project0-1.jpg"
+            alt="slider-image"
+          />
+
+          <img
+            class="slider__arrow slider__arrow-right"
+            src="assets/img/right-arrow.png"
+            alt=""
+          />
+          <img
+            class="slider__arrow slider__arrow-left"
+            src="assets/img/right-arrow.png"
+            alt=""
+          />
+        </div>
+      </div>
+
       <section class="portfolio section bd-container" id="portfolio">
         <h2 class="section-title">Портфолио</h2>
-
         <div class="portfolio__nav">
           <span class="portfolio__item active-portfolio" data-filter="all"
             >Все</span
           >
-          <span class="portfolio__item" data-filter=".web"
+          <span class="portfolio__item" data-filter=".design"
             >Интерьер/Экстерьер</span
           >
-          <span class="portfolio__item" data-filter=".ux">Ландшафт</span>
-          <span class="portfolio__item" data-filter=".app"
+          <span class="portfolio__item" data-filter=".landscape">Ландшафт</span>
+          <span class="portfolio__item" data-filter=".graphic"
             >Графический дизайн</span
           >
         </div>
 
         <div class="portfolio__container bd-grid">
-          <div class="portfolio__content mix web">
-            <a href="#"
-              ><img src="assets/img/amir6.jpg" alt="" class="portfolio__img"
+          <div class="portfolio__content mix design">
+            <a data-which="0" class="view__details" href=""
+              ><img
+                src="assets/img/project0/project0-1.jpg"
+                alt=""
+                class="portfolio__img"
             /></a>
             <div class="portfolio__data">
-              <span class="portfolio__subtitle">Design</span>
-              <a href="#"
+              <span class="portfolio__subtitle">Интерьер/Экстерьер</span>
+              <a data-which="0" class="view__details" href=""
                 ><h2 class="portfolio__title">
-                  New portfolio of work done for a client.
+                  Выполнен в современном стиле. 58 квм. адрес: ЖК Смородина, г. Владивосток.
                 </h2></a
               >
-              <a href="#" class="button button-link">View Details</a>
+              <a data-which="0" class="view__details button button-link" href=""
+                >Посмотреть</a
+              >
             </div>
           </div>
 
-          <div class="portfolio__content mix web">
-            <a href="#"
-              ><img src="assets/img/amir3.jpg" alt="" class="portfolio__img"
+          <div class="portfolio__content mix design">
+            <a data-which="1" href="" class="view__details"
+              ><img
+                src="assets/img/project1/project1-1.jpg"
+                alt=""
+                class="portfolio__img"
             /></a>
             <div class="portfolio__data">
-              <span class="portfolio__subtitle">Design</span>
-              <a href="#"
+              <span class="portfolio__subtitle">Интерьер/Экстерьер</span>
+              <a data-which="1" href="" class="view__details"
                 ><h2 class="portfolio__title">
-                  New portfolio of work done for a client.
+                  Выполнен по стиле неоклассика. 58 квм.  адрес: ЖК Смородина, г. Владивосток.
                 </h2></a
               >
-              <a href="#" class="button button-link">View Details</a>
+              <a data-which="1" href="" class="view__details button button-link"
+                >Посмотреть</a
+              >
             </div>
           </div>
 
-          <div class="portfolio__content mix ux">
-            <a href="#"
-              ><img src="assets/img/amir4.jpg" alt="" class="portfolio__img"
+          <div class="portfolio__content mix design">
+            <a data-which="2" href="" class="view__details"
+              ><img
+                src="assets/img/project2/project2-1.jpg"
+                alt=""
+                class="portfolio__img"
             /></a>
             <div class="portfolio__data">
-              <span class="portfolio__subtitle">Architecture</span>
-              <a href="#"
+              <span class="portfolio__subtitle">Интерьер/Экстерьер</span>
+              <a data-which="2" href="" class="view__details"
                 ><h2 class="portfolio__title">
-                  New portfolio of work done for a client.
+                  Выполнен по стиле неоклассика, 48 квм. адрес: ЖК Смородина, г. Владивосток
                 </h2></a
               >
-              <a href="#" class="button button-link">View Details</a>
+              <a data-which="2" href="" class="view__details button button-link"
+                >Посмотреть</a
+              >
             </div>
           </div>
 
-          <div class="portfolio__content mix ux">
-            <a href="#"
-              ><img src="assets/img/amir5.jpg" alt="" class="portfolio__img"
+          <div class="portfolio__content mix landscape">
+            <a data-which="3" href="" class="view__details"
+              ><img
+                src="assets/img/project3/project3-1.jpg"
+                alt=""
+                class="portfolio__img"
             /></a>
             <div class="portfolio__data">
-              <span class="portfolio__subtitle">Architecture</span>
-              <a href="#"
+              <span class="portfolio__subtitle">Ландшафт</span>
+              <a data-which="3" href="" class="view__details"
                 ><h2 class="portfolio__title">
-                  New portfolio of work done for a client.
+                  
                 </h2></a
               >
-              <a href="#" class="button button-link">View Details</a>
+              <a data-which="3" href="" class="view__details button button-link"
+                >Посмотреть</a
+              >
             </div>
           </div>
 
-          <div class="portfolio__content mix app">
-            <a href="#"
-              ><img src="assets/img/amir1.jpg" alt="" class="portfolio__img"
+          <div class="portfolio__content mix landscape">
+            <a data-which="4" href="" class="view__details"
+              ><img
+                src="assets/img/project4/project4-1.jpg"
+                alt=""
+                class="portfolio__img"
             /></a>
             <div class="portfolio__data">
-              <span class="portfolio__subtitle">Black</span>
-              <a href="#"
+              <span class="portfolio__subtitle">Ландшафт</span>
+              <a data-which="4" href="" class="view__details"
                 ><h2 class="portfolio__title">
-                  New portfolio of work done for a client.
+                  
                 </h2></a
               >
-              <a href="#" class="button button-link">View Details</a>
-            </div>
-          </div>
-
-          <div class="portfolio__content mix app">
-            <a href="#"
-              ><img src="assets/img/amir6.jpg" alt="" class="portfolio__img"
-            /></a>
-            <div class="portfolio__data">
-              <span class="portfolio__subtitle">Black</span>
-              <a href="#"
-                ><h2 class="portfolio__title">
-                  New portfolio of work done for a client.
-                </h2></a
+              <a data-which="4" href="" class="view__details button button-link"
+                >Посмотреть</a
               >
-              <a href="#" class="button button-link">View Details</a>
             </div>
           </div>
         </div>
