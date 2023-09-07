@@ -67,6 +67,7 @@ function scrollTop() {
 window.addEventListener("scroll", scrollTop);
 
 // MIXITUP FILTER PORTFOLIO
+
 const mixer = mixitup(".portfolio__container", {
   selectors: {
     target: ".portfolio__content",
@@ -191,7 +192,8 @@ mainForm.addEventListener("submit", (e) => {
 //////////////////////////////////////////////
 
 // PARTICLES JS ANIMATION
-particlesJS.load("particles-js", "particles.json", function () {});
+import data from "../../particles.json";
+particlesJS.load("particles-js", data, function () {});
 
 //////////////////////////////////////////////
 
@@ -346,78 +348,10 @@ ScrollReveal().reveal(".contact__box_2", contactBox2);
 ScrollReveal().reveal(".contact__box_3", contactBox3);
 ScrollReveal().reveal(".contact__box_4", contactBox4);
 
-// scrollreveal js in qualification section
-let contactInput1 = {
-  distance: "60%",
-  origin: "left",
-  opacity: null,
-  reset: true,
-  duration: 850,
-  delay: 200,
-  easing: "ease-in-out",
-  mobile: false,
-};
-let contactInput2 = {
-  distance: "60%",
-  origin: "right",
-  opacity: null,
-  reset: true,
-  duration: 850,
-  delay: 200,
-  easing: "ease-in-out",
-  mobile: false,
-};
-let contactInput3 = {
-  distance: "60%",
-  origin: "left",
-  opacity: null,
-  reset: true,
-  duration: 850,
-  delay: 200,
-  easing: "ease-in-out",
-  mobile: false,
-};
-let contactInput4 = {
-  distance: "60%",
-  origin: "right",
-  opacity: null,
-  reset: true,
-  duration: 850,
-  delay: 200,
-  easing: "ease-in-out",
-  mobile: false,
-};
-let contactInput5 = {
-  distance: "35%",
-  origin: "left",
-  opacity: null,
-  reset: true,
-  duration: 850,
-  delay: 200,
-  easing: "ease-in-out",
-  mobile: false,
-};
-let contactBtn = {
-  distance: "60%",
-  origin: "bottom",
-  opacity: null,
-  reset: true,
-  duration: 850,
-  delay: 200,
-  easing: "ease-in-out",
-  mobile: false,
-};
-ScrollReveal().reveal(".contact__input_1", contactInput1);
-ScrollReveal().reveal(".contact__input_2", contactInput2);
-ScrollReveal().reveal(".contact__input_3", contactInput3);
-ScrollReveal().reveal(".contact__input_4", contactInput4);
-ScrollReveal().reveal(".contact__input_5", contactInput5);
-ScrollReveal().reveal(".contact__button", contactBtn);
-
 // scrollreveal js in portfolio section
 let allPortfolioContent = document.querySelectorAll(".portfolio__content");
 let portfolioContent = {
-  distance: "35%",
+  distance: "28%",
   origin: "bottom",
   opacity: null,
   reset: true,
@@ -571,7 +505,7 @@ aEl.forEach((child) => {
 
 // Swiper for Portfolio section
 const viewDetailsBtn = document.querySelectorAll(".view__details");
-const portfolioContainer = document.querySelector(".portfolio__container");
+const sliderMainContainer = document.querySelectorAll(".slider__main");
 const sliderExit = document.querySelector(".slider__exit_icon");
 const sliderContainer = document.querySelector(".slider__container");
 
@@ -586,30 +520,14 @@ viewDetailsBtn.forEach((btn) => {
     sliderContainer.style.display = "flex";
     document.body.style.overflowY = "hidden";
 
-    const previousImages = document.querySelector(
-      ".slider__images .slider__image"
-    );
+    sliderMainContainer.forEach((e) => {
+      e.style.display = "none";
+    });
 
     const whichBtn = Number(btn.getAttribute("data-which"));
-    const sliderRight = document.querySelector(".slider__arrow-right");
-    const sliderLeft = document.querySelector(".slider__arrow-left");
-    const QUEU = [11, 13, 11, 3, 3];
-    let currentQueu = QUEU[whichBtn];
-  
-
-    previousImages.src = `assets/img/project${whichBtn}/project${whichBtn}-1.jpg`;
-
-    sliderRight.addEventListener("click", (e) => {
-      if (currentQueu > 1) {
-        currentQueu--;
-        previousImages.src = `assets/img/project${whichBtn}/project${whichBtn}-${currentQueu}.jpg`;
-      }
-    });
-    sliderLeft.addEventListener("click", (e) => {
-      if (currentQueu < QUEU[whichBtn] - 1) {
-        currentQueu++;
-        previousImages.src = `assets/img/project${whichBtn}/project${whichBtn}-${currentQueu}.jpg`;
-      }
-    });
+    const activeSlider = document.querySelector(
+      `.slider__main--${whichBtn + 1}`
+    );
+    activeSlider.style.display = "flex";
   });
 });

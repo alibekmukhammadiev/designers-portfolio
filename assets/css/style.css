@@ -368,7 +368,7 @@ img {
   transition: 0.3s;
 }
 
-.nav__link::hover {
+.nav__link:hover {
   color: var(--first-color-light);
 }
 
@@ -754,8 +754,13 @@ img {
 
 .slider__images img {
   max-height: 90%;
-  box-shadow: 0px 0px 50px -3px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 50px -3px rgba(0, 0, 0, 0.5);
+}
 
+.slider__main swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .slider__exit {
@@ -772,24 +777,24 @@ img {
   top: 50%;
 
   background-color: var(--first-color-lighten);
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 50%;
-  box-shadow: .1px .1px 40px .5px #000;
+  box-shadow: 0.1px 0.1px 40px 0.5px #000;
 
   cursor: pointer;
-  transition: .3s transform;
+  transition: 0.3s transform;
 }
 
 .slider__arrow-left:hover,
 .slider__arrow-left:active {
-  transform: translateX(-5px) translateY(-50%) rotate(180deg);  
-  transition: .3s transform;
+  transform: translateX(-5px) translateY(-50%) rotate(180deg);
+  transition: 0.3s transform;
 }
 
 .slider__arrow-right:hover,
 .slider__arrow-right:active {
-  transform: translateX(5px) translateY(-50%);  
-  transition: .3s transform;
+  transform: translateX(5px) translateY(-50%);
+  transition: 0.3s transform;
 }
 
 .slider__arrow-left {
@@ -1031,7 +1036,6 @@ img {
   width: 100%;
   height: 100%;
   background-color: #000;
-  background-image: url("");
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
