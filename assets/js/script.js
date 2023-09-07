@@ -192,8 +192,8 @@ mainForm.addEventListener("submit", (e) => {
 //////////////////////////////////////////////
 
 // PARTICLES JS ANIMATION
-import data from "../../particles.json";
-particlesJS.load("particles-js", data, function () {});
+
+particlesJS.load("particles-js", "particles.json", function () {});
 
 //////////////////////////////////////////////
 
