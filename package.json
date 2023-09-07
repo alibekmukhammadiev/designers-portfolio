@@ -4,17 +4,8 @@
     "mmenu-js": "^9.3.0",
     "particles.js": "^2.0.0"
   },
-  "devDependencies": {
-    "parcel": "^2.9.3",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "parcel-reporter-static-files-copy": "^1.5.2"
-  },
   "name": "portfolio",
   "version": "1.0.0",
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
-  },
   "author": "",
   "license": "ISC",
   "description": ""
